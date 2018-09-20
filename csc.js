@@ -38,6 +38,13 @@ async function onSignButtonClick() {
 	rsp = await send('00A40400' + '09A00000057420020101');         // select
 	log('sw ' + rsp.sw);
 	log('data ' + rsp.data);
+    let userCmd = document.querySelector('#cmd').value;
+    if(userCmd){
+    log('User Command ');    
+    rsp = await send(userCmd);
+	log('sw ' + rsp.sw);
+	log('data ' + rsp.data);
+    }
    /* log('Initiate Shutdown');
 	rsp = await send('300118');  // initiateShutdown
 	log('sw ' + rsp.sw);
