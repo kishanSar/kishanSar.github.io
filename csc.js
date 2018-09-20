@@ -31,19 +31,19 @@ async function onSignButtonClick() {
 		hashValue[i] = Math.floor(Math.random() * 256);
 	}
 	
-	rsp = await send('300108');
-	log('sw ' + rsp.sw);
-	log('data ' + rsp.data);
+	rsp = await send('300108');	
+	log('Response Data:' + rsp.data);
+    log('Status: ' + rsp.sw);
 	log('Select applet');
-	rsp = await send('00A40400' + '09A00000057420020101');         // select
-	log('sw ' + rsp.sw);
-	log('data ' + rsp.data);
+	rsp = await send('00A40400' + '09A00000057420020101');         // select	
+	log('Response Data:' + rsp.data);
+    log('Status: ' + rsp.sw);
     let userCmd = document.querySelector('#cmd').value;
     if(userCmd){
     log('User Command ');    
-    rsp = await send(userCmd);
-	log('sw ' + rsp.sw);
-	log('data ' + rsp.data);
+    rsp = await send(userCmd);	
+	log('Response Data:' + rsp.data);
+    log('Status: ' + rsp.sw);
     }
    /* log('Initiate Shutdown');
 	rsp = await send('300118');  // initiateShutdown
