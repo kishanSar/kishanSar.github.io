@@ -38,8 +38,9 @@ async function onSignButtonClick() {
 	rsp = await send('00A40400' + '09A00000057420020101');         // select
 	log('sw ' + rsp.sw);
 	log('data ' + rsp.data);
-    log('Initiate Shutdown');
+   /* log('Initiate Shutdown');
 	rsp = await send('300118');  // initiateShutdown
 	log('sw ' + rsp.sw);
-	log('data ' + rsp.data);
+	log('data ' + rsp.data);*/
+    await disconnect();
 }

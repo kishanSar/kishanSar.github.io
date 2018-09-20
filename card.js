@@ -189,6 +189,6 @@ function handleNotifications(event) {
 // -------------------------------------------------------------------------
 function onDisconnected(event) {
 	// Object event.target is Bluetooth Device getting disconnected.
-	let device = event.target;
+	let device = event.target;    
 	log('Device ' + device.name + ' disconnected');
 }
