@@ -5,7 +5,7 @@ let secondTime = false;
 let fullResponseExpectedLen = null;
 let writeCharacteristic = null;
 let responseNotifier = null;
-
+let options = {filters: []};
 // -------------------------------------------------------------------------
 function isWebBluetoothEnabled() {
 	if (navigator.bluetooth) {
@@ -55,8 +55,7 @@ function strToAscii(str) {
 }
 
 // -------------------------------------------------------------------------
-async function connect() {
-	let options = {filters: []};
+async function connect() {	
     if(!secondTime) {
 	options.filters.push({services: [0xFFF0]});
 	options.filters.push({namePrefix: 'TYSC-'});  // todo - figure out why devices aren't listed when this is removed??
