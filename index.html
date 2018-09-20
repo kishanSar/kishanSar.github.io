@@ -1,1 +1,64 @@
-Hello World
+<!DOCTYPE html>
+<html>
+  <body>
+	<img src="BLE_icon.png" />
+	
+	<h2>Web Bluetooth Demo</h2>
+
+	<p id="descr">
+	  This webapp demonstrates the Web bluetooth 
+	  
+	  Follow these steps to use the demo:
+	  
+	  <ol>
+		<li>:</li>
+		<li>Trigger a request:</li>
+		<ol type="a">
+		  <li>Check the verbose box if you want debug output.</li>
+		  <li>The default advertising filter is 'TYSC-'.  Enter a full BLE friendly name if you want to restrict the filtering to a single BLE Device.</li>		  	  
+		  <li>Click on the Execute button.<br>
+			A BLE connection will be established to the BLE peripheral device and the response will be show in the verbose window.<br>
+			The BLE connection will be dropped after the response is received.
+		  </li>
+		</ol>
+		<li>Repeat.</li>
+	  </ol>
+	</p>
+
+	<hr>
+	
+	<form>
+	  Verbose <input id="verbose"type="checkbox" >
+	  <br>
+	  <br>
+	  <input id="name" type="text" placeholder="BLE device Friendly Name">	  
+	  <br>
+	  <br>
+	  <button id="sign">Execute</button>
+	  <br>
+	</form>
+
+	<hr>
+	
+	<h3>Command/Response Output</h3>
+	<div id="output" class="output">
+	  <div id="content"></div>
+	  <div id="status"></div>
+	  <pre id="log"></pre>
+	</div>
+
+	<script type="text/javascript" src="csc.js" ></script>
+	<script type="text/javascript" src="card.js" ></script>
+
+	<script>
+	  document.querySelector('#sign').addEventListener('click', function(event) {
+	    event.stopPropagation();
+	    event.preventDefault();
+	    if (isWebBluetoothEnabled()) {
+	      onSignButtonClick();
+	    }
+	    });
+	  </script>
+
+  </body>
+</html> 
