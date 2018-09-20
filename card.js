@@ -1,6 +1,7 @@
 let bluetoothDevice = null;
 let fullResponseData = [];
 let fullResponseComplete = false;
+let secondTime = false;
 let fullResponseExpectedLen = null;
 let writeCharacteristic = null;
 let responseNotifier = null;
@@ -56,9 +57,11 @@ function strToAscii(str) {
 // -------------------------------------------------------------------------
 async function connect() {
 	let options = {filters: []};
+    if(!secondTime) {
 	options.filters.push({services: [0xFFF0]});
 	options.filters.push({namePrefix: 'TYSC-'});  // todo - figure out why devices aren't listed when this is removed??
-	
+    secondTime = true;
+    }
 	let filterName = document.querySelector('#name').value;
 	if (filterName) {
 		options.filters.push({name: filterName});
