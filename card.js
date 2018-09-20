@@ -93,10 +93,9 @@ async function connect() {
 
 // -------------------------------------------------------------------------
 async function send(command) {
+    log('Command: ' + command);
 	command = numToHex(command.length/2, 4) + command;
 	
-	log('COMMAND: ' + command);
-
 	// hexToArrayBuf
 	let writeData = new Uint8Array(command.match(/[\da-f]{2}/gi).map(function (h) {
 		return parseInt(h, 16)
