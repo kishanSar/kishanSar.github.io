@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+ <head>
+     <style>
+      .content { position: relative; height: 400px; border: 1px solid #3c48ce;}      
+    </style>
+ </head>
   <body>
 <img src="BLE_icon.png" align="left" /><h1>Web Bluetooth Demo </h1>
 	<p id="descr">
@@ -8,7 +13,7 @@
 	  Follow below steps to use the demo:
 	  	
 		<ol type="a">
-		  <li>Check the verbose box if you want debug output.</li>
+		   &nbsp; &nbsp; &nbsp; &nbsp;<li>Check the verbose box if you want debug output.</li>
 		  <li>The default advertising filter is 'TYSC-'.  Enter a full BLE friendly name if you want to restrict the filtering to a single BLE Device.</li>		  	  
 		  <li> Enter Data which you want to send to Peripheral Device.</li>
 		  <li>Click on the Connect button.<br>
@@ -43,7 +48,7 @@
 	<hr>
 	
 	<h3>Command/Response Output</h3>
-	<div id="output" class="output">
+	<div id="output" class="content">
 	  <div id="content"></div>
 	  <div id="status"></div>
 	  <pre id="log"></pre>
@@ -56,7 +61,8 @@
 	  document.querySelector('#sign').addEventListener('click', function(event) {
 	    event.stopPropagation();
 	    event.preventDefault();
-	    if (isWebBluetoothEnabled()) {
+          clearLog();
+	    if (isWebBluetoothEnabled()) {            
 	      onSignButtonClick();
 	    }
 	    });

@@ -14,7 +14,7 @@ let InfoOutput = {
 		document.querySelector('#log').textContent = '';
 	},
 };
-
+clearLog = InfoOutput.clearLog;
 log = InfoOutput.log;
 
 
