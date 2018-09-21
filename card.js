@@ -144,7 +144,7 @@ async function disconnect() {
 	catch(error) {
         log('Argh! ' + error);
     }
-	/*log('TODO - fix disconnect');*/
+	// ---/*log('TODO - fix disconnect');*/
 }
 
 // -------------------------------------------------------------------------
