@@ -133,7 +133,7 @@ async function send(command) {
 // -------------------------------------------------------------------------
 async function disconnect() {
 	try {
-		log('disconnect');
+//		log('disconnect');
 		if (bluetoothDevice.gatt.connected) {
 			await bluetoothDevice.gatt.disconnect();
 		}
