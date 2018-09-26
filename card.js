@@ -76,7 +76,7 @@ async function connect(serviceUUID=0xFFF0, writeChar=0xFFF5, readChar = 0xFFF4) 
 		const server = await bluetoothDevice.gatt.connect();
 
 		log('Getting Service ...');
-		const service = await server.getPrimaryService(serviceUUID);//0xFFF0
+		const service = await server.getPrimaryService(serviceUUID);
 
 		log('Getting Write Characteristic and Response Notifier ...');
 		writeCharacteristic = await service.getCharacteristic(writeChar);

@@ -22,7 +22,7 @@ async function onSignButtonClick() {
 	InfoOutput.clearLog();
 	verbose = document.getElementById('verbose').checked;
     
-	await connect();
+	await connect(0xFFF0, 0xFFF5, 0xFFF4);
 	
 	hashByteLen = 32;
 	let hashValue = new Array(hashByteLen);
