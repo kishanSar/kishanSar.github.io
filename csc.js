@@ -44,9 +44,9 @@ async function onSignButtonClick() {
 	log('Response Data:' + rsp.data);
     log('Status: ' + rsp.sw);
     }
-   /* log('Initiate Shutdown');
+    /*log('Initiate Shutdown');
 	rsp = await send('300118');  // initiateShutdown
-	log('sw ' + rsp.sw);
-	log('data ' + rsp.data);*/
+	log('Response Data:' + rsp.sw);
+	log('Status: ' + rsp.data);*/    
     await disconnect();
 }
