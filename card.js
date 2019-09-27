@@ -57,8 +57,8 @@ function strToAscii(str) {
 // -------------------------------------------------------------------------
 async function connect(serviceUUID=0xFFF0, writeChar=0xFFF5, readChar = 0xFFF4) {	
     if(!secondTime) {
-	//options.filters.push({services: [serviceUUID]}); //0xFFF0
-	options.filters.push({optionalService:[serviceUUID]});//0xFFF0
+	options.filters.push({services: [serviceUUID]}); //0xFFF0
+	//options.filters.push({optionalService:[serviceUUID]});//0xFFF0
 	options.filters.push({namePrefix: 'TYSC-'});  // todo - figure out why devices aren't listed when this is removed??
     secondTime = true;
     }
